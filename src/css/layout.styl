@@ -1,0 +1,56 @@
+.container
+  position relative
+  height 100vh
+  overflow hidden
+  lost-utility clearfix
+  +below(mobile-max-width)
+    padding-bottom 250px
+    overflow visible
+    height auto
+  &.fullscreen
+    .sidebar
+      lost-column 0/12 12 0
+      overflow hidden
+    .content
+      lost-column 12/12 12 0
+
+.sidebar
+  transition transitions-delay
+  lost-column 4/12 12 0
+  height 100vh
+  overflow auto
+  +below(mobile-max-width)
+    lost-column 1/1 1 0
+    overflow visible
+    height auto
+
+.content
+  transition transitions-delay
+  lost-column 8/12 12 0
+  height 100vh
+  overflow auto
+  box-sizing border-box
+  padding 10px 5%
+  +below(mobile-max-width)
+    lost-column 1/1 1 0
+    overflow visible
+    height auto
+    margin-bottom: 25px;
+
+.cols-4
+  lost-utility clearfix
+  > *
+    lost-column 1/4
+    max-width 200px
+
+.languages
+  @extend .cols-4
+
+.projects
+  @extend .cols-4
+
+.map
+  lost-utility clearfix
+  img
+    lost-column 1/1
+    max-width 890px
