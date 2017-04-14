@@ -1,0 +1,53 @@
+footer
+  padding sidebar-padding
+  box-sizing border-box
+
+  +below(mobile-max-width)
+    position fixed
+    bottom 0
+    left 0
+    padding 5%
+    width 100%
+    box-sizing border-box
+    background-color sidebar-background-color
+    z-index 1000
+
+  ul.contact
+    margin 0
+    padding 0
+    list-style none
+
+    a
+      position relative
+      display inline-block
+      box-sizing border-box
+      width 100%
+      padding .7em 0 0 2rem
+
+      text-decoration none
+      color links-color
+
+      &:before
+        content ""
+        position absolute
+        left 0
+        top .5rem
+        width 1.5rem
+        height 1.5rem
+        background-repeat no-repeat
+        background-size contain
+
+      &.email:before
+        background-image url('../img/email.png')
+
+      &.linkedin:before
+        background-image url('../img/linkedin.png')
+
+      &.github:before
+        background-image url('../img/github.png')
+        
+      &.stackoverflow:before
+        background-image url('../img/stackoverflow.png')
+        top 0
+        width 2rem
+        height 2rem
