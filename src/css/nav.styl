@@ -1,0 +1,53 @@
+nav.nav-links
+  margin 0
+  padding 0
+  list-style none
+  background-color sidebar-background-color
+
+  a
+    position relative
+    display inline-block
+    box-sizing border-box
+    width 100%
+    padding 2rem
+    padding-left "calc(%s + 4rem)" % sidebar-padding
+    padding-right 5px
+    color menu-link-color
+    font-size font-size-big
+    font-weight 700
+    border-bottom border-specs
+    transition transitions-delay
+    opacity 0.4
+
+    &:hover
+      transition transitions-delay
+      opacity 1
+      background-color active-link-bg-color
+
+    +below(mobile-max-width)
+      padding-left "calc(%s + 4rem)" % sidebar-mobile-padding
+
+    &:before
+      content ""
+      position absolute
+      left sidebar-padding
+      top 1.5rem
+      width 3rem
+      height 3rem
+      background-repeat no-repeat
+      background-size contain
+
+      +below(mobile-max-width)
+        left sidebar-mobile-padding
+
+    &.about:before
+      background-image url("../img/about.png")
+
+    &.education:before
+      background-image url("../img/education.png")
+
+    &.experience:before
+      background-image url("../img/experience.png")
+
+    &.skills:before
+      background-image url("../img/skills.png")
